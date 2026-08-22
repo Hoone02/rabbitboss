@@ -1,0 +1,42 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"spawn": {
+			"loop": "hold_on_last_frame",
+			"animation_length": 3,
+			"override_previous_animation": true,
+			"bones": {
+				"bone": {
+					"rotation": {
+						"1.05": {
+							"vector": [0, 0, 0]
+						},
+						"3.0": {
+							"vector": [45, 0, 0],
+							"easing": "easeOutExpo"
+						}
+					}
+				},
+				"bone2": {
+					"position": {
+						"0.0": {
+							"vector": [0, 125, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0],
+							"easing": "easeInCirc"
+						},
+						"0.75": {
+							"vector": [0, 7, 0],
+							"easing": "easeOutQuart"
+						},
+						"1.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInCirc"
+						}
+					}
+				}
+			}
+		}
+	}
+}

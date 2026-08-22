@@ -1,0 +1,14 @@
+name: RabbitBossMiniGame
+version: 1.0-SNAPSHOT
+main: org.example.hoon.rabbitboss.minigame.RabbitBossMiniGamePlugin
+api-version: '1.21'
+author: pixel_hoon
+description: RabbitBoss minigame controller and public API
+commands:
+  rabbitboss:
+    description: RabbitBoss minigame command
+    usage: /rabbitboss <start|stop|status|reload|setting>
+    permission: rabbitboss.admin
+permissions:
+  rabbitboss.admin:
+    default: op

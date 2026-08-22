@@ -1,0 +1,38 @@
+# Gradle and build output
+**/.gradle/
+**/.kotlin/
+**/build/
+**/out/
+
+# IDE and OS files
+**/.idea/
+**/*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Development client state
+mod/**/run/
+mod/**/config/
+mod/**/data/
+mod/**/downloads/
+mod/**/logs/
+mod/**/mods/
+mod/**/resourcepacks/
+mod/**/saves/
+mod/**/servers.dat*
+mod/**/options.txt
+mod/**/command_history.txt
+mod/**/*-run*.log
+mod/**/compile-*.log
+
+# Local dedicated server and temporary dependencies
+server/
+.tmp_gecko/
+.tmp_gecko5/
+
+# Runtime files
+*.log
+*.pid
+hs_err_pid*
+

@@ -1,0 +1,16 @@
+min-players: 30
+finish-survivors: 1
+player-lives: 5
+auto-start-check-ticks: 20
+
+trigger-area:
+  forward-range: 11
+  side-range: 12
+  vertical-min: -2
+  vertical-max: 6
+
+positions:
+  boss-spawn: {}
+  area: {}
+  canons: {}
+  tntareas: {}
