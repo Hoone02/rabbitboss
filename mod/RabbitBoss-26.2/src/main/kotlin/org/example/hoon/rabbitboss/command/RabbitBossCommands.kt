@@ -90,7 +90,7 @@ object RabbitBossCommands {
     private const val START_FOX_TO_BOSS_TICKS = 100
     private const val START_BOSS_TO_FOX_EXPLODE_TICKS = 10
     private const val START_FOX_REMOVE_AFTER_EXPLODE_TICKS = 80
-    private const val START_PATTERN_AFTER_FOX_REMOVE_TICKS = 100
+    private const val START_BOSS_SPAWN_ANIMATION_TICKS = 55
     private const val SKILL_ONE_PATTERN_TICKS = 240
     private const val SKILL_TWO_PATTERN_TICKS = CANON_SKILL_DELAY_TICKS +
         (CANON_COUNT - 1) * CANON_SEQUENCE_INTERVAL_TICKS +
@@ -1327,9 +1327,7 @@ object RabbitBossCommands {
         scheduledTasks.add(
             ScheduledTask(
                 START_FOX_TO_BOSS_TICKS +
-                    START_BOSS_TO_FOX_EXPLODE_TICKS +
-                    START_FOX_REMOVE_AFTER_EXPLODE_TICKS +
-                    START_PATTERN_AFTER_FOX_REMOVE_TICKS
+                    START_BOSS_SPAWN_ANIMATION_TICKS
             ) {
                 val entity = boss
                 if (entity != null && entity.isAlive) {
@@ -1425,10 +1423,11 @@ object RabbitBossCommands {
         existingBoss: RabbitBossEntity?
     ): RabbitBossEntity {
         val pos = spawn.position
-        val boss = if (existingBoss != null && existingBoss.isAlive) {
+        val isNewBoss = existingBoss == null || !existingBoss.isAlive
+        val boss = if (!isNewBoss) {
             existingBoss
         } else {
-            RabbitBossEntity(ModEntities.RABBIT_BOSS, level).also { level.addFreshEntity(it) }
+            RabbitBossEntity(ModEntities.RABBIT_BOSS, level)
         }
 
         forceChunk(level, pos.x, pos.z)
@@ -1438,6 +1437,11 @@ object RabbitBossCommands {
         boss.yHeadRot = spawn.yaw
         boss.yBodyRot = spawn.yaw
         boss.playAnimation("spawn")
+        if (isNewBoss) {
+            // Include the spawn animation in the initial entity packet so the client
+            // never renders the default idle pose for one or two frames first.
+            level.addFreshEntity(boss)
+        }
         activeBossUuid = boss.uuid
         activeBossEntity = boss
         activeBossSpawnPosition = spawn.position

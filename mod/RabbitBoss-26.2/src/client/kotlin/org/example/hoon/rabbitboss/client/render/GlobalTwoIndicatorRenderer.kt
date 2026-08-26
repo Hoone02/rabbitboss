@@ -41,7 +41,7 @@ class GlobalTwoIndicatorRenderer(context: EntityRendererProvider.Context) :
     ) {
         poseStack.pushPose()
         poseStack.mulPose(Axis.YP.rotationDegrees(-state.yaw))
-        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.debugQuads()) { renderedPose, buffer ->
+        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.lightning()) { renderedPose, buffer ->
             val pose = renderedPose.pose()
         val maxDistance = kotlin.math.sqrt(11.0f * 11.0f + 12.0f * 12.0f)
         val fillRadius = state.progress * maxDistance

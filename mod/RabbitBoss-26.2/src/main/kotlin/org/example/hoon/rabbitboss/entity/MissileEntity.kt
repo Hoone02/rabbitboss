@@ -29,6 +29,7 @@ class MissileEntity(entityType: EntityType<out PathfinderMob>, level: Level) :
     PathfinderMob(entityType, level), GeoEntity {
 
     private val cache: AnimatableInstanceCache = GeckoLibUtil.createInstanceCache(this)
+
     private var startPos: Vec3 = Vec3.ZERO
     private var targetPos: Vec3 = Vec3.ZERO
     private var flightTicks = 0

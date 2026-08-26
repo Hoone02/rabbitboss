@@ -44,7 +44,7 @@ class TntIndicatorRenderer(context: EntityRendererProvider.Context) :
         val fillRadius = state.progress * maxDistance
         poseStack.pushPose()
         poseStack.mulPose(Axis.YP.rotationDegrees(-state.yaw))
-        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.debugQuads()) { renderedPose, buffer ->
+        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.lightning()) { renderedPose, buffer ->
             val pose = renderedPose.pose()
 
             for (front in -11..11) {

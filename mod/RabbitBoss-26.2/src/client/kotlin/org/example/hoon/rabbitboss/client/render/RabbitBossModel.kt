@@ -8,11 +8,11 @@ import com.geckolib.renderer.base.GeoRenderState
 
 class RabbitBossModel : GeoModel<RabbitBossEntity>() {
     override fun getModelResource(renderState: GeoRenderState): Identifier =
-        Rabbitboss.id("geo/rabbit_boss.geo.json")
+        Rabbitboss.id("rabbit_boss")
 
     override fun getTextureResource(renderState: GeoRenderState): Identifier =
         Rabbitboss.id("textures/entity/rabbit_boss.png")
 
     override fun getAnimationResource(animatable: RabbitBossEntity): Identifier =
-        Rabbitboss.id("animations/rabbit_boss.animation.json")
+        Rabbitboss.id("rabbit_boss")
 }

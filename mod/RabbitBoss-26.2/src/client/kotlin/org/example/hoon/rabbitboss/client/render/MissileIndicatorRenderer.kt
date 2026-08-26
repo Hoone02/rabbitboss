@@ -41,7 +41,7 @@ class MissileIndicatorRenderer(context: EntityRendererProvider.Context) :
     ) {
         poseStack.pushPose()
         poseStack.mulPose(Axis.YP.rotationDegrees(-state.yaw))
-        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.debugQuads()) { renderedPose, buffer ->
+        submitNodeCollector.submitCustomGeometry(poseStack, RenderTypes.lightning()) { renderedPose, buffer ->
             val pose = renderedPose.pose()
         val fillRadius = state.progress * 2.84f
 

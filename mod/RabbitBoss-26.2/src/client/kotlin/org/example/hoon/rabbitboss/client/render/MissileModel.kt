@@ -7,10 +7,10 @@ import com.geckolib.model.GeoModel
 import com.geckolib.renderer.base.GeoRenderState
 
 class MissileModel : GeoModel<MissileEntity>() {
-    override fun getModelResource(renderState: GeoRenderState): Identifier = Rabbitboss.id("geo/missile.geo.json")
+    override fun getModelResource(renderState: GeoRenderState): Identifier = Rabbitboss.id("missile")
 
     override fun getTextureResource(renderState: GeoRenderState): Identifier = Rabbitboss.id("textures/entity/missile.png")
 
     override fun getAnimationResource(animatable: MissileEntity): Identifier =
-        Rabbitboss.id("animations/missile.animation.json")
+        Rabbitboss.id("missile")
 }
