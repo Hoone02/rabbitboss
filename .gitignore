@@ -28,6 +28,7 @@ mod/**/compile-*.log
 
 # Local dedicated server and temporary dependencies
 server/
+server-*/
 .tmp_gecko/
 .tmp_gecko5/
 
@@ -35,4 +36,3 @@ server/
 *.log
 *.pid
 hs_err_pid*
-
